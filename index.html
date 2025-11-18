@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subham Bhattacharyya - Full Stack Developer</title>
+    <meta name="description" content="Portfolio of Subham Bhattacharyya, Full Stack Developer specializing in web and mobile development">
     <link rel="icon" href="Subham.jpg" type="image/jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -15,6 +16,9 @@
             --dark: #2c3e50;
             --text: #333;
             --text-light: #7f8c8d;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         
         * {
@@ -39,7 +43,7 @@
             text-align: center;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow);
         }
         
         .header-content {
@@ -100,7 +104,7 @@
         /* Navigation */
         nav {
             background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow);
             position: sticky;
             top: 0;
             z-index: 100;
@@ -174,7 +178,7 @@
             padding: 2rem;
             background-color: white;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--shadow);
             animation: fadeInUp 0.8s ease;
         }
         
@@ -455,6 +459,101 @@
             opacity: 0.8;
         }
         
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-info h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        .submit-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--secondary);
+        }
+        
+        .form-message {
+            padding: 1rem;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        
+        .form-message.success {
+            background-color: rgba(46, 204, 113, 0.1);
+            border: 1px solid var(--success);
+            color: var(--success);
+        }
+        
+        .form-message.error {
+            background-color: rgba(231, 76, 60, 0.1);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+        }
+        
         /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -481,6 +580,21 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+        }
+        
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255,255,255,.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
         }
         
         /* Mobile Styles */
@@ -534,6 +648,10 @@
             .skills-container, .personal-details {
                 grid-template-columns: 1fr;
             }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -546,7 +664,7 @@
             <div class="contact-info">
                 <div class="contact-item">
                     <i class="fas fa-phone"></i>
-                    <span>9101620936</span>
+                    <span>+91 9101620936</span>
                 </div>
                 <div class="contact-item">
                     <i class="fas fa-envelope"></i>
@@ -567,11 +685,14 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="nav-links" id="navLinks">
+                <a href="#career-objective">Career</a>
                 <a href="#summary">Summary</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
                 <a href="#education">Education</a>
+                <a href="#hobbies">Hobbies</a>
                 <a href="#personal">Personal</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
@@ -689,6 +810,16 @@
                     <h3>Painting</h3>
                     <p>Expressing creativity through visual art</p>
                 </div>
+                <div class="hobby-card">
+                    <i class="fas fa-code"></i>
+                    <h3>Coding</h3>
+                    <p>Building projects and solving problems</p>
+                </div>
+                <div class="hobby-card">
+                    <i class="fas fa-book"></i>
+                    <h3>Reading</h3>
+                    <p>Exploring new technologies and concepts</p>
+                </div>
             </div>
         </section>
         
@@ -733,6 +864,85 @@
             </div>
         </section>
         
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <p>Assam, India</p>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <p>bpritam839@gmail.com</p>
+                        </div>
+                        <div class="contact-detail">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <p>+91 9101620936</p>
+                        </div>
+                    </div>
+                    <h3>Whatsapp Group</h3>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <p><a href="https://chat.whatsapp.com/DwbREZOIbPW6MeMD22gjwo" style="color: var(--primary);">Join Our Whatsapp Group</a></p>
+                    </div>
+                    <h3>Telegram Group</h3>
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <i class="fab fa-telegram"></i>
+                        </div>
+                        <p><a href="https://t.me/+S6s9NNzyur00ODc1" style="color: var(--primary);">Join Our Telegram Group</a></p>
+                    </div>
+                    
+                    <h3 style="margin-top: 2rem;">Follow Me</h3>
+                    <div class="social-links">
+                        <a href="https://chat.whatsapp.com/DwbREZOIbPW6MeMD22gjwo" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://t.me/+S6s9NNzyur00ODc1" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.instagram.com/subham_21710/?utm_source=ig_web_button_share_sheet" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/subhambhattacharyya936" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Me a Message</h3>
+                    <div id="formMessage" class="form-message"></div>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Your Phone (Optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" id="submitBtn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
         <div class="declaration">
             <p>I hereby declare that the information provided above is true and accurate to the best of my knowledge. I am ready to commit to the responsibilities and opportunities that lie ahead.</p>
         </div>
@@ -740,9 +950,9 @@
     
     <footer>
         <div class="social-links">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/subhambhattacharyya936" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/subham-bhattacharyya-/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://twitter.com/subhambhattacharyya" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="mailto:bpritam839@gmail.com"><i class="fas fa-envelope"></i></a>
         </div>
         <p class="copyright">© 2025 Subham Bhattacharyya. All rights reserved.</p>
@@ -795,8 +1005,97 @@
         
         // Check on scroll
         window.addEventListener('scroll', animateOnScroll);
+
+        // Contact Form Submission to Google Sheets
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Change button text to show loading
+            submitBtn.innerHTML = '<div class="loading"></div> Sending...';
+            submitBtn.disabled = true;
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value || 'Not provided';
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // YOUR ACTUAL WEB APP URL
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbw8FXMx2Va0vdd_yqm2ueJ-RL1PC7q_HexWYUStjsbxrFjELURuQ9D9KoilkaKCYFiZDw/exec';
+            
+            // Prepare form data
+            const formData = new FormData();
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('phone', phone);
+            formData.append('subject', subject);
+            formData.append('message', message);
+            
+            // Send data to Google Sheets
+            fetch(scriptURL, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.result === 'success') {
+                    // Show success message
+                    formMessage.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully.';
+                    formMessage.className = 'form-message success';
+                    formMessage.style.display = 'block';
+                    
+                    // Reset form
+                    contactForm.reset();
+                } else {
+                    throw new Error(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                formMessage.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Sorry, there was an error. Please try again or contact me directly.';
+                formMessage.className = 'form-message error';
+                formMessage.style.display = 'block';
+            })
+            .finally(() => {
+                // Reset button
+                submitBtn.innerHTML = 'Send Message';
+                submitBtn.disabled = false;
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            });
+        });
+
+        // Add active class to navigation based on scroll position
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
     </script>
 </body>
 </html>
-
-
