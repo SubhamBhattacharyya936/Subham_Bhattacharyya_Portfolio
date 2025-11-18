@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Subham Bhattacharyya - Full Stack Developer</title>
-    <meta name="description" content="Portfolio of Subham Bhattacharyya, Full Stack Developer specializing in web and mobile development">
     <link rel="icon" href="Subham.jpg" type="image/jpeg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -467,9 +466,16 @@
             margin-top: 2rem;
         }
         
+        .contact-info {
+            display: block;
+            text-align: left;
+            margin-top: 0;
+        }
+        
         .contact-info h3 {
             margin-bottom: 1rem;
             color: var(--secondary);
+            font-size: 1.3rem;
         }
         
         .contact-details {
@@ -492,6 +498,57 @@
             align-items: center;
             justify-content: center;
             color: white;
+        }
+        
+        .contact-detail p {
+            margin: 0;
+        }
+        
+        .contact-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-group h3 {
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+            font-size: 1.3rem;
+        }
+        
+        .contact-group a {
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-group a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-links-contact {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links-contact a {
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .social-links-contact a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
         }
         
         .form-group {
@@ -868,8 +925,8 @@
             <h2>Get In Touch</h2>
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-details">
+                    <div class="contact-group">
+                        <h3>Contact Information</h3>
                         <div class="contact-detail">
                             <div class="contact-icon">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -889,34 +946,37 @@
                             <p>+91 9101620936</p>
                         </div>
                     </div>
-                    <h3>Whatsapp Group</h3>
-                    <div class="contact-detail">
-                        <div class="contact-icon">
-                            <i class="fab fa-whatsapp"></i>
-                        </div>
-                        <p><a href="https://chat.whatsapp.com/DwbREZOIbPW6MeMD22gjwo" style="color: var(--primary);">Join Our Whatsapp Group</a></p>
-                    </div>
-                    <h3>Telegram Group</h3>
-                    <div class="contact-detail">
-                        <div class="contact-icon">
-                            <i class="fab fa-telegram"></i>
-                        </div>
-                        <p><a href="https://t.me/+S6s9NNzyur00ODc1" style="color: var(--primary);">Join Our Telegram Group</a></p>
-                    </div>
-                    <h3>Instagram</h3>
-                    <div class="contact-detail">
-                        <div class="contact-icon">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <p><a href="https://www.instagram.com/subham_21710/?utm_source=ig_web_button_share_sheet" style="color: var(--primary);">Follow Me</a></p>
+                    
+                    <div class="contact-group">
+                        <h3>Whatsapp Group</h3>
+                        <a href="https://chat.whatsapp.com/DwbREZOIbPW6MeMD22gjwo" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Join Our Whatsapp Group
+                        </a>
                     </div>
                     
-
-                    <div class="social-links">
-                        <a href="https://chat.whatsapp.com/DwbREZOIbPW6MeMD22gjwo" class="social-link"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://t.me/+S6s9NNzyur00ODc1" class="social-link"><i class="fab fa-telegram"></i></a>
-                        <a href="https://www.instagram.com/subham_21710/?utm_source=ig_web_button_share_sheet" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="https://github.com/subhambhattacharyya936" class="social-link"><i class="fab fa-github"></i></a>
+                    <div class="contact-group">
+                        <h3>Telegram Group</h3>
+                        <a href="https://t.me/+S6s9NNzyur00ODc1" target="_blank">
+                            <i class="fab fa-telegram"></i> Join Our Telegram Group
+                        </a>
+                    </div>
+                    
+                    <div class="contact-group">
+                        <h3>Follow Me</h3>
+                        <div class="social-links-contact">
+                            <a href="https://chat.whatsapp.com/DwbREZOIbPW6MeMD22gjwo" target="_blank">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="https://t.me/+S6s9NNzyur00ODc1" target="_blank">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                            <a href="https://www.instagram.com/subham_21710/?utm_source=ig_web_button_share_sheet" target="_blank">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://github.com/subhambhattacharyya936" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
@@ -1103,7 +1163,24 @@
                 }
             });
         });
+
+        // Disable right-click
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+// Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
+document.onkeydown = function(e) {
+    if (e.keyCode == 123) { // F12
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && (e.keyCode == 73 || e.keyCode == 74)) {
+        return false; // Ctrl+Shift+I  or  Ctrl+Shift+J
+    }
+    if (e.ctrlKey && e.keyCode == 85) {
+        return false; // Ctrl+U
+    }
+};
     </script>
 </body>
 </html>
-
