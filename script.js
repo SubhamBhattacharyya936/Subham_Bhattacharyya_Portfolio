@@ -65,7 +65,7 @@
             const message = document.getElementById('message').value;
             
             // YOUR ACTUAL WEB APP URL
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbw8FXMx2Va0vdd_yqm2ueJ-RL1PC7q_HexWYUStjsbxrFjELURuQ9D9KoilkaKCYFiZDw/exec';
+            const scriptURL = ' ';
             
             // Prepare form data
             const formData = new FormData();
