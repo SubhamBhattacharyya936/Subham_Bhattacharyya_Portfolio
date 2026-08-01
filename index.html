@@ -168,8 +168,10 @@
             background: var(--secondary);
             color: #e8e8f0;
             line-height: 1.7;
-            overflow-x: hidden;
+            overflow-x: hidden; /* prevent horizontal scroll */
             min-height: 100vh;
+            width: 100%;
+            max-width: 100vw;
         }
 
         ::-webkit-scrollbar {
@@ -208,6 +210,8 @@
                 radial-gradient(ellipse at 70% 80%, rgba(253, 121, 168, 0.10), transparent 50%),
                 var(--secondary);
             overflow: hidden;
+            width: 100%;
+            max-width: 100vw;
         }
 
         header::before {
@@ -225,6 +229,7 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 0 0.5rem;
+            width: 100%;
         }
 
         .profile-wrapper {
@@ -265,6 +270,7 @@
             border: 3px solid rgba(255, 255, 255, 0.15);
             box-shadow: 0 20px 60px rgba(108, 92, 231, 0.3);
             transition: transform var(--transition), box-shadow var(--transition);
+            max-width: 100%;
         }
 
         .profile-img:hover {
@@ -282,6 +288,7 @@
             letter-spacing: -1px;
             margin-bottom: 0.2rem;
             animation: fadeUp 1s ease 0.2s both;
+            word-break: break-word;
         }
 
         .header-content .tagline {
@@ -290,6 +297,7 @@
             color: rgba(255, 255, 255, 0.7);
             margin-bottom: 1.5rem;
             animation: fadeUp 1s ease 0.4s both;
+            word-break: break-word;
         }
 
         .header-content .tagline .highlight-web {
@@ -308,6 +316,7 @@
             gap: 0.8rem 2rem;
             font-size: clamp(0.8rem, 1.4vw, 0.95rem);
             animation: fadeUp 1s ease 0.6s both;
+            width: 100%;
         }
 
         .contact-info-header .contact-item {
@@ -320,6 +329,7 @@
             padding: 0.3rem 0.5rem;
             border-radius: 8px;
             touch-action: manipulation;
+            word-break: break-word;
         }
 
         .contact-info-header .contact-item:hover {
@@ -331,6 +341,7 @@
             color: var(--primary-light);
             width: 1.2rem;
             text-align: center;
+            flex-shrink: 0;
         }
 
         .scroll-indicator {
@@ -413,6 +424,8 @@
             backdrop-filter: blur(20px) saturate(1.5);
             -webkit-backdrop-filter: blur(20px) saturate(1.5);
             border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            width: 100%;
+            max-width: 100vw;
         }
 
         .nav-container {
@@ -423,6 +436,7 @@
             align-items: center;
             padding: 0.5rem 1.5rem;
             min-height: 60px;
+            width: 100%;
         }
 
         .logo {
@@ -433,6 +447,7 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             letter-spacing: -0.5px;
+            flex-shrink: 0;
         }
 
         .nav-links {
@@ -491,6 +506,8 @@
             padding: 1.5rem 1rem 3rem;
             position: relative;
             z-index: 2;
+            width: 100%;
+            overflow-x: hidden;
         }
 
         /* ── Sections ── */
@@ -506,6 +523,9 @@
             transition: opacity 0.7s ease, transform 0.7s ease;
             opacity: 0;
             transform: translateY(40px) scale(0.98);
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
         }
 
         section.visible {
@@ -523,6 +543,7 @@
             color: #fff;
             letter-spacing: -0.3px;
             flex-wrap: wrap;
+            word-break: break-word;
         }
 
         section h2 i {
@@ -552,11 +573,11 @@
             overflow-wrap: break-word;
         }
 
-        /* ── Summary ── */
+        /* ── Summary (FIXED: no horizontal overflow) ── */
         .summary-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 0.6rem 1.8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
         }
 
         .summary-grid li {
@@ -570,6 +591,7 @@
             word-wrap: break-word;
             overflow-wrap: break-word;
             line-height: 1.6;
+            width: 100%;
         }
 
         .summary-grid li::before {
@@ -584,6 +606,29 @@
         .summary-grid li strong {
             color: #fff;
             font-weight: 600;
+        }
+
+        /* Sub-bullets for nested lists inside summary */
+        .summary-grid li ul {
+            list-style: none;
+            margin-top: 0.2rem;
+            padding-left: 1.2rem;
+        }
+
+        .summary-grid li ul li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+            font-size: 0.92em;
+            padding: 0.1rem 0;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .summary-grid li ul li::before {
+            content: '▸';
+            color: var(--accent2);
+            font-size: 0.8rem;
+            flex-shrink: 0;
         }
 
         /* ── Skills ── */
@@ -848,6 +893,8 @@
             font-weight: 600;
             margin-top: 0.3rem;
             border: 1px solid rgba(108, 92, 231, 0.15);
+            max-width: 100%;
+            word-break: break-word;
         }
 
         /* ── Hobbies ── */
@@ -949,6 +996,7 @@
             grid-template-columns: 1fr 1.2fr;
             gap: 2rem;
             margin-top: 0.5rem;
+            width: 100%;
         }
 
         .contact-left h3 {
@@ -1043,6 +1091,7 @@
             text-decoration: none;
             border: 1px solid rgba(255, 255, 255, 0.04);
             touch-action: manipulation;
+            flex-shrink: 0;
         }
 
         .social-icons a:hover {
@@ -1110,6 +1159,7 @@
             font-family: inherit;
             -webkit-appearance: none;
             appearance: none;
+            max-width: 100%;
         }
 
         .form-group textarea {
@@ -1150,6 +1200,7 @@
             justify-content: center;
             gap: 0.5rem;
             width: 100%;
+            max-width: 100%;
         }
 
         .submit-btn::before {
@@ -1193,6 +1244,7 @@
             margin-top: 1.5rem;
             font-size: clamp(0.8rem, 1.1vw, 0.85rem);
             font-style: italic;
+            word-break: break-word;
         }
 
         /* ── Footer ── */
@@ -1205,6 +1257,9 @@
             border-top: 1px solid rgba(255, 255, 255, 0.04);
             text-align: center;
             padding: 2rem 1.5rem;
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
         }
 
         footer .social-links {
@@ -1231,6 +1286,7 @@
         footer .copyright {
             color: rgba(255, 255, 255, 0.2);
             font-size: clamp(0.7rem, 1vw, 0.8rem);
+            word-break: break-word;
         }
 
         /* ── Loading ── */
@@ -1322,9 +1378,6 @@
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
-            .summary-grid {
-                grid-template-columns: 1fr;
-            }
             .exp-grid {
                 grid-template-columns: 1fr;
             }
@@ -1336,6 +1389,9 @@
             }
             section {
                 padding: 1.5rem;
+            }
+            .summary-grid {
+                gap: 0.4rem;
             }
         }
 
@@ -1383,15 +1439,17 @@
                 display: none;
             }
 
-            .summary-grid {
-                grid-template-columns: 1fr;
-                gap: 0.4rem;
-            }
-
             .summary-grid li {
                 font-size: 0.92rem;
                 padding: 0.4rem 0;
                 line-height: 1.6;
+            }
+            /* nested bullets */
+            .summary-grid li ul {
+                padding-left: 0.8rem;
+            }
+            .summary-grid li ul li {
+                font-size: 0.88rem;
             }
 
             .personal-grid {
@@ -1440,6 +1498,13 @@
                 font-size: 1rem;
                 width: 1.6rem;
             }
+
+            .exp-card {
+                padding: 1rem 1.2rem;
+            }
+            .skill-card {
+                padding: 1rem;
+            }
         }
 
         /* Very small phones */
@@ -1472,6 +1537,9 @@
             .summary-grid li {
                 font-size: 0.85rem;
                 padding: 0.3rem 0;
+            }
+            .summary-grid li ul li {
+                font-size: 0.82rem;
             }
             .objective-text {
                 font-size: 0.9rem;
@@ -1652,14 +1720,20 @@
             </p>
         </section>
 
-        <!-- ─── SUMMARY (FIXED: fully responsive on mobile) ─── -->
+        <!-- ─── SUMMARY (fully responsive, no horizontal scroll) ─── -->
         <section id="summary" aria-labelledby="summary-heading">
             <h2 id="summary-heading">
                 <i class="fas fa-user-check"></i> Summary
                 <span class="line"></span>
             </h2>
             <ul class="summary-grid">
-                <li>BCA graduate with hands-on experience in <strong>full-stack web development</strong> (PHP, MySQL, HTML, CSS, JS) and <strong>Android app development</strong> (Java, Kotlin, Android Studio).</li>
+                <li>
+                    <strong>BCA graduate</strong> with hands-on experience in:
+                    <ul>
+                        <li><strong>full-stack web development</strong> (PHP, MySQL, HTML, CSS, JS)</li>
+                        <li><strong>Android app development</strong> (Java, Kotlin, Android Studio)</li>
+                    </ul>
+                </li>
                 <li>Diploma in Civil Engineering with practical internship experience at PWD, Govt. of Assam.</li>
                 <li>Skilled in AutoCAD (2D &amp; 3D design &amp; planning).</li>
                 <li>Certified in C Programming by IIT Bombay.</li>
