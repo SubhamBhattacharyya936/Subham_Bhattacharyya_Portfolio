@@ -7,7 +7,7 @@
     <!-- ─── PRIMARY SEO META ─── -->
     <title>Subham Bhattacharyya · Full Stack Web &amp; Android App Developer</title>
     <meta name="description" content="Subham Bhattacharyya — Full Stack Web &amp; Android App Developer with civil engineering background. Expert in PHP, MySQL, Java, Kotlin, Android Studio, HTML, CSS, JavaScript, AutoCAD 2D/3D. BCA graduate, IIT Bombay certified." />
-    <meta name="keywords" content="Subham Bhattacharyya, subhambhattacharyya, full stack developer, web developer Assam, PHP developer, civil engineer, AutoCAD designer, BCA graduate, IIT Bombay certified, Mangaldai, Assam" />
+    <meta name="keywords" content="Subham Bhattacharyya, subhambhattacharyya, full stack developer, Android app developer, mobile app developer, web developer Assam, PHP developer, Java developer, Kotlin developer, civil engineer, AutoCAD designer, BCA graduate, IIT Bombay certified, Mangaldai, Assam" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
     <link rel="canonical" href="https://subhambhattacharyya.com/" />
 
@@ -18,8 +18,8 @@
 
     <!-- ─── OPEN GRAPH (Facebook / LinkedIn) ─── -->
     <meta property="og:type" content="profile" />
-    <meta property="og:title" content="Subham Bhattacharyya · Full Stack Web Developer &amp; Civil Engineer" />
-    <meta property="og:description" content="Portfolio of Subham Bhattacharyya — Full Stack Web Developer, Civil Engineering background, AutoCAD expert, BCA graduate, IIT Bombay C Programming certified." />
+    <meta property="og:title" content="Subham Bhattacharyya · Full Stack Web &amp; Android App Developer" />
+    <meta property="og:description" content="Portfolio of Subham Bhattacharyya — Full Stack Web &amp; Android App Developer, Civil Engineering background, AutoCAD expert, BCA graduate, IIT Bombay C Programming certified." />
     <meta property="og:url" content="https://subhambhattacharyya.com/" />
     <meta property="og:site_name" content="Subham Bhattacharyya Portfolio" />
     <meta property="og:image" content="https://subhambhattacharyya.com/Subham.jpg" />
@@ -31,8 +31,8 @@
 
     <!-- ─── TWITTER CARD ─── -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Subham Bhattacharyya · Full Stack Web Developer &amp; Civil Engineer" />
-    <meta name="twitter:description" content="Full Stack Web Developer with civil engineering background. PHP, MySQL, HTML, CSS, JavaScript, AutoCAD 2D/3D. BCA, IIT Bombay certified." />
+    <meta name="twitter:title" content="Subham Bhattacharyya · Full Stack Web &amp; Android App Developer" />
+    <meta name="twitter:description" content="Full Stack Web &amp; Android App Developer with civil engineering background. PHP, Java, Kotlin, Android Studio, MySQL, HTML, CSS, JavaScript, AutoCAD 2D/3D. BCA, IIT Bombay certified." />
     <meta name="twitter:image" content="https://subhambhattacharyya.com/Subham.jpg" />
     <meta name="twitter:site" content="@subhambhattacharyya" />
 
@@ -45,7 +45,7 @@
             "alternateName": "subhambhattacharyya",
             "url": "https://subhambhattacharyya.com/",
             "image": "https://subhambhattacharyya.com/Subham.jpg",
-            "jobTitle": "Full Stack Web Developer",
+            "jobTitle": "Full Stack Web & Android App Developer",
             "worksFor": {
                 "@type": "Organization",
                 "name": "UpdatesAll.site"
@@ -59,14 +59,19 @@
             }],
             "knowsAbout": [
                 "Full Stack Web Development",
+                "Android App Development",
                 "PHP",
+                "Java",
+                "Kotlin",
+                "Android Studio",
                 "MySQL",
                 "HTML5",
                 "CSS3",
                 "JavaScript",
                 "AutoCAD 2D & 3D",
                 "Civil Engineering",
-                "Responsive Design"
+                "Responsive Design",
+                "RESTful APIs"
             ],
             "address": {
                 "@type": "PostalAddress",
@@ -91,7 +96,7 @@
             "@type": "WebSite",
             "name": "Subham Bhattacharyya Portfolio",
             "url": "https://subhambhattacharyya.com/",
-            "description": "Portfolio of Subham Bhattacharyya — Full Stack Web Developer and Civil Engineer based in Assam, India.",
+            "description": "Portfolio of Subham Bhattacharyya — Full Stack Web & Android App Developer and Civil Engineer based in Assam, India.",
             "author": {
                 "@type": "Person",
                 "name": "Subham Bhattacharyya"
@@ -144,6 +149,7 @@
             --gradient-1: linear-gradient(135deg, #6c5ce7, #fd79a8);
             --gradient-2: linear-gradient(135deg, #00cec9, #6c5ce7);
             --gradient-3: linear-gradient(135deg, #fd79a8, #fdcb6e);
+            --gradient-mobile: linear-gradient(135deg, #00b894, #6c5ce7);
             --glass-bg: rgba(255, 255, 255, 0.06);
             --glass-border: rgba(255, 255, 255, 0.08);
             --shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
@@ -286,8 +292,12 @@
             animation: fadeUp 1s ease 0.4s both;
         }
 
-        .header-content .tagline span {
+        .header-content .tagline .highlight-web {
             color: var(--primary-light);
+            font-weight: 500;
+        }
+        .header-content .tagline .highlight-mobile {
+            color: var(--accent2);
             font-weight: 500;
         }
 
@@ -637,6 +647,18 @@
             color: var(--accent2);
             font-size: 0.8rem;
             flex-shrink: 0;
+        }
+
+        /* Android skill card special badge */
+        .skill-card.android-card {
+            border-color: rgba(0, 206, 201, 0.15);
+            background: rgba(0, 206, 201, 0.04);
+        }
+        .skill-card.android-card::before {
+            background: var(--gradient-mobile);
+        }
+        .skill-card.android-card h3 i {
+            color: var(--accent2);
         }
 
         /* ── Experience ── */
@@ -1436,11 +1458,11 @@
     <header>
         <div class="header-content">
             <div class="profile-wrapper">
-                <img src="Subham.jpg" alt="Subham Bhattacharyya — Full Stack Web Developer Portfolio" class="profile-img" />
+                <img src="Subham.jpg" alt="Subham Bhattacharyya — Full Stack Web & Android App Developer" class="profile-img" />
             </div>
             <h1>Subham Bhattacharyya</h1>
-            <span class="highlight-web">Web</span> &amp; <span class="highlight-mobile">Android App</span> Developer · <span style="color:rgba(255,255,255,0.5);">
-                Civil Engineering</span> Background
+            <p class="tagline">
+                <span class="highlight-web">Web</span> &amp; <span class="highlight-mobile">Android App</span> Developer · <span style="color:rgba(255,255,255,0.5);">Civil Engineering</span> Background
             </p>
             <div class="contact-info-header">
                 <a href="tel:+919101620936" class="contact-item" aria-label="Call Subham">
@@ -1471,7 +1493,6 @@
             <ul class="nav-links" id="navLinks" role="menubar">
                 <li role="none"><a href="#home" class="active" role="menuitem">Home</a></li>
                 <li role="none"><a href="#career" role="menuitem">Career</a></li>
-                <li role="none"><a href="#summary" role="menuitem">Summary</a></li>
                 <li role="none"><a href="#skills" role="menuitem">Skills</a></li>
                 <li role="none"><a href="#experience" role="menuitem">Experience</a></li>
                 <li role="none"><a href="#education" role="menuitem">Education</a></li>
@@ -1492,25 +1513,8 @@
                 <span class="line"></span>
             </h2>
             <p class="objective-text">
-                Aspiring full-stack developer with a Diploma in Civil Engineering and a strong passion for web development.
-                Seeking a challenging position to apply technical skills in both software development and civil engineering
-                domains, contributing to innovative projects and gaining valuable industry experience.
+                Aspiring <strong>Full Stack Web &amp; Android App Developer</strong> with a Diploma in Civil Engineering and a strong passion for building digital solutions across platforms. Seeking a challenging position to apply technical skills in <strong>web development, Android app development, and civil engineering</strong> domains, contributing to innovative projects and gaining valuable industry experience.
             </p>
-        </section>
-
-        <!-- ─── SUMMARY ─── -->
-        <section id="summary" aria-labelledby="summary-heading">
-            <h2 id="summary-heading">
-                <i class="fas fa-user-check"></i> Summary
-                <span class="line"></span>
-            </h2>
-            <ul class="summary-grid">
-                <li>BCA graduate with hands-on experience in full-stack web development (PHP, MySQL, HTML, CSS, JS).</li>
-                <li>Diploma in Civil Engineering with practical internship experience at PWD, Govt. of Assam.</li>
-                <li>Skilled in AutoCAD (2D &amp; 3D design &amp; planning).</li>
-                <li>Certified in C Programming by IIT Bombay.</li>
-                <li>Strong ability to work independently and collaboratively in cross-functional teams.</li>
-            </ul>
         </section>
 
         <!-- ─── SKILLS ─── -->
@@ -1537,6 +1541,15 @@
                         <li>RESTful APIs</li>
                     </ul>
                 </div>
+                <div class="skill-card android-card">
+                    <h3><i class="fab fa-android"></i> Android App</h3>
+                    <ul>
+                        <li>Java / Kotlin</li>
+                        <li>Android Studio</li>
+                        <li>XML Layouts</li>
+                        <li>Firebase Integration</li>
+                    </ul>
+                </div>
                 <div class="skill-card">
                     <h3><i class="fas fa-drafting-compass"></i> Civil &amp; Design</h3>
                     <ul>
@@ -1550,6 +1563,7 @@
                     <ul>
                         <li>Git / GitHub</li>
                         <li>VS Code</li>
+                        <li>Android Studio</li>
                         <li>XAMPP / WAMP</li>
                     </ul>
                 </div>
@@ -1594,7 +1608,7 @@
                     <div class="tl-date">Currently Pursuing</div>
                     <h3>Bachelor of Computer Applications (BCA)</h3>
                     <div class="tl-sub">Mangaldai College, Gauhati University</div>
-                    <div class="tl-desc">Completed 3‑year BCA program with focus on software development.</div>
+                    <div class="tl-desc">Completed 3‑year BCA program with focus on software development including web and mobile technologies.</div>
                 </div>
                 <div class="timeline-item">
                     <div class="tl-date">2023</div>
