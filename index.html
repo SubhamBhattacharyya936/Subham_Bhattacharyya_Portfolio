@@ -530,6 +530,7 @@
             font-size: 1.3rem;
             width: 2rem;
             text-align: center;
+            flex-shrink: 0;
         }
 
         section h2 .line {
@@ -547,13 +548,15 @@
             color: rgba(255, 255, 255, 0.75);
             max-width: 800px;
             line-height: 1.8;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         /* ── Summary ── */
         .summary-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 0.6rem 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 0.6rem 1.8rem;
         }
 
         .summary-grid li {
@@ -564,6 +567,9 @@
             color: rgba(255, 255, 255, 0.8);
             font-size: clamp(0.88rem, 1.4vw, 0.98rem);
             padding: 0.3rem 0;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            line-height: 1.6;
         }
 
         .summary-grid li::before {
@@ -573,6 +579,11 @@
             font-size: 1rem;
             margin-top: 0.1rem;
             flex-shrink: 0;
+        }
+
+        .summary-grid li strong {
+            color: #fff;
+            font-weight: 600;
         }
 
         /* ── Skills ── */
@@ -627,6 +638,7 @@
         .skill-card h3 i {
             color: var(--primary-light);
             font-size: 1.1rem;
+            flex-shrink: 0;
         }
 
         .skill-card ul {
@@ -640,6 +652,8 @@
             gap: 0.6rem;
             color: rgba(255, 255, 255, 0.7);
             font-size: clamp(0.8rem, 1.2vw, 0.9rem);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .skill-card ul li::before {
@@ -726,6 +740,8 @@
             font-size: clamp(0.85rem, 1.2vw, 0.92rem);
             color: rgba(255, 255, 255, 0.7);
             line-height: 1.6;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .exp-card .exp-link {
@@ -816,6 +832,8 @@
         .timeline-item .tl-desc {
             font-size: clamp(0.85rem, 1.2vw, 0.92rem);
             color: rgba(255, 255, 255, 0.65);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .cert-badge {
@@ -921,6 +939,8 @@
             font-size: clamp(0.85rem, 1.2vw, 0.92rem);
             font-weight: 500;
             color: rgba(255, 255, 255, 0.85);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         /* ── Contact ── */
@@ -969,6 +989,7 @@
         .contact-detail p {
             font-size: clamp(0.85rem, 1.2vw, 0.92rem);
             word-break: break-word;
+            overflow-wrap: break-word;
         }
 
         .contact-group {
@@ -992,6 +1013,8 @@
             transition: all var(--transition);
             touch-action: manipulation;
             padding: 0.2rem 0;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .contact-group a:hover {
@@ -1360,6 +1383,17 @@
                 display: none;
             }
 
+            .summary-grid {
+                grid-template-columns: 1fr;
+                gap: 0.4rem;
+            }
+
+            .summary-grid li {
+                font-size: 0.92rem;
+                padding: 0.4rem 0;
+                line-height: 1.6;
+            }
+
             .personal-grid {
                 grid-template-columns: 1fr 1fr;
             }
@@ -1391,6 +1425,21 @@
                 width: 100%;
                 justify-content: center;
             }
+
+            section {
+                padding: 1.2rem 1rem;
+                border-radius: 12px;
+            }
+
+            section h2 {
+                font-size: 1.2rem;
+                gap: 0.4rem;
+            }
+
+            section h2 i {
+                font-size: 1rem;
+                width: 1.6rem;
+            }
         }
 
         /* Very small phones */
@@ -1405,20 +1454,58 @@
                 grid-template-columns: 1fr 1fr;
             }
             section {
-                padding: 1.2rem;
-                border-radius: 12px;
+                padding: 1rem 0.8rem;
+                border-radius: 10px;
             }
             .container {
-                padding: 0.8rem 0.8rem 1.5rem;
+                padding: 0.6rem 0.6rem 1.2rem;
             }
             .nav-container {
-                padding: 0.4rem 0.8rem;
+                padding: 0.4rem 0.6rem;
             }
             .exp-card {
-                padding: 1rem 1.2rem;
+                padding: 0.8rem 1rem;
             }
             .skill-card {
-                padding: 1rem;
+                padding: 0.8rem;
+            }
+            .summary-grid li {
+                font-size: 0.85rem;
+                padding: 0.3rem 0;
+            }
+            .objective-text {
+                font-size: 0.9rem;
+            }
+            .header-content h1 {
+                font-size: 1.6rem;
+            }
+            .profile-img {
+                width: min(110px, 25vw);
+            }
+            .contact-detail .c-icon {
+                width: 34px;
+                min-width: 34px;
+                height: 34px;
+                font-size: 0.85rem;
+            }
+            .social-icons a {
+                width: 38px;
+                height: 38px;
+                font-size: 0.95rem;
+            }
+            .submit-btn {
+                padding: 0.6rem 1.2rem;
+                min-height: 44px;
+                font-size: 0.85rem;
+            }
+            .form-group input,
+            .form-group textarea {
+                padding: 0.5rem 0.8rem;
+                min-height: 40px;
+                font-size: 0.85rem;
+            }
+            .form-group textarea {
+                min-height: 80px;
             }
         }
 
@@ -1438,6 +1525,53 @@
             }
             .nav-links a {
                 padding: 0.6rem 1.2rem;
+            }
+            .contact-group a {
+                min-height: 44px;
+                padding: 0.4rem 0;
+            }
+        }
+
+        /* Print-friendly */
+        @media print {
+            #particles-canvas,
+            .floating-shapes,
+            .scroll-indicator,
+            .mobile-menu-btn {
+                display: none !important;
+            }
+            body {
+                background: #fff;
+                color: #222;
+            }
+            section {
+                background: #fff;
+                box-shadow: none;
+                border: 1px solid #ddd;
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .glass-bg {
+                background: #fff;
+            }
+            .profile-img {
+                border-color: #ccc;
+            }
+            .header-content h1 {
+                -webkit-text-fill-color: #222;
+                background: none;
+                color: #222;
+            }
+            .nav-links a {
+                color: #222 !important;
+            }
+            .contact-detail .c-icon {
+                background: #eee;
+                color: #222;
+            }
+            .submit-btn {
+                background: #222;
+                color: #fff;
             }
         }
     </style>
@@ -1518,7 +1652,7 @@
             </p>
         </section>
 
-        <!-- ─── SUMMARY ─── -->
+        <!-- ─── SUMMARY (FIXED: fully responsive on mobile) ─── -->
         <section id="summary" aria-labelledby="summary-heading">
             <h2 id="summary-heading">
                 <i class="fas fa-user-check"></i> Summary
